@@ -29,10 +29,11 @@ def get_proxy():
     """
     Get a proxy
     """
-    html = requests.get('http://ip.chinaz.com/211.147.67.150').text
-    ip_adress = re.compile("""<span class="Whwtdhalf w50-0">(.*?)</span>""")
-    re_ip_adress = ip_adress.findall(html)
     conn = get_conn()
+    if conn.pop():
+        html = requests.get('http://ip.chinaz.com/%s' % str(conn.pop())).text
+        ip_adress = re.compile("""<span class="Whwtdhalf w50-0">(.*?)</span>""")
+        re_ip_adress = ip_adress.findall(html)
     return conn.pop()+'<br/>'+str(re_ip_adress)
 
 
