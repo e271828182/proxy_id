@@ -33,7 +33,7 @@ def get_proxy():
     ip_adress = re.compile("""<span class="Whwtdhalf w50-0">(.*?)</span>""")
     re_ip_adress = ip_adress.findall(html)
     conn = get_conn()
-    return conn.pop()+'\n'+str(re_ip_adress)
+    return conn.pop()+'<br/>'+str(re_ip_adress)
 
 
 @app.route('/count')
