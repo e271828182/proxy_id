@@ -9,7 +9,7 @@ setup(
     author_email='e2.718@live.com',
     url='https://github.com/e271828182/proxy_id',
     packages=[
-        'proxy-id'
+        'proxy_id'
     ],
     py_modules=['run'],
     include_package_data=True,
